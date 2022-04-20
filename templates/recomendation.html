@@ -1,0 +1,31 @@
+{% extends "base.html" %} {% block content %} {% include "/includes/search.html" %}
+
+<div class="container">
+  <h4 class="text-center" style="margin-top: 50px">Top 10 Products:</h4>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Rating</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for item in products %}
+      <tr>
+        <th scope="row"><a href="#" class="text-decoration-none text-reset">{{item[1]}}</a></th>
+        <td>{{item[2]}}</td>
+        <td>{{item[3] | currencyFormat}}</td>
+        <td>{{item[4]}}</td>
+        <td>{{item[6]}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}
