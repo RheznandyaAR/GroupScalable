@@ -7,10 +7,10 @@
     <thead>
       <tr>
         <th>Product Name</th>
-        <th>Description</th>
         <th>Price</th>
-        <th>Category</th>
         <th>Rating</th>
+        <th>Location</th>
+        <th>Sold</th>
       </tr>
     </thead>
 
@@ -19,9 +19,9 @@
       <tr>
         <th scope="row"><a href="#" class="text-decoration-none text-reset">{{item[1]}}</a></th>
         <td>{{item[2]}}</td>
-        <td>{{item[3] | currencyFormat}}</td>
+        <td>{{item[3]}}</td>
         <td>{{item[4]}}</td>
-        <td>{{item[6]}}</td>
+        <td>{{item[5]}}</td>
       </tr>
       {% endfor %}
     </tbody>
