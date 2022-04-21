@@ -16,7 +16,7 @@ def search():
     data = r.get('http://localhost:5006/products').json()
 
     try:
-        matching = [s for s in data if search_term.lower() in s['product_name'].lower() or search_term.lower() in s['location'].lower()]
+        matching = [s for s in data if search_term.lower() in s['product_name'].lower()]
     except Exception as e:
         print(e)
         return jsonify({'message': 'error'})
