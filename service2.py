@@ -12,11 +12,11 @@ def recommendation():
     data = r.get('http://localhost:5006/products').json()
 
     try:
-        data = sorted(data[:10], key=lambda k: k['rating'], reverse=True)
+        data = sorted(data, key=lambda k: k['rating'], reverse=True)
     except Exception as e:
         print(e)
         return jsonify({'message': 'error'})
-    return jsonify(data)
+    return jsonify(data[:10])
 
 if __name__ == '__main__':
     app.run(debug=True, port=5002)
