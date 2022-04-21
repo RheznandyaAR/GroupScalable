@@ -1,7 +1,5 @@
 
-from flask import Flask, request
-from flask import jsonify
-import json
+from flask import Flask, request, jsonify
 
 import requests as r
 
@@ -18,7 +16,7 @@ def search():
     data = r.get('http://localhost:5006/products').json()
 
     try:
-        matching = [s for s in data if search_term.lower() in s['product_name'].lower()]
+        matching = [s for s in data if search_term.lower() in s['product_name'].lower() or search_term.lower() in s['location'].lower()]
     except Exception as e:
         print(e)
         return jsonify({'message': 'error'})
